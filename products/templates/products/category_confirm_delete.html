@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Category Deletion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .confirmation-message {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .confirm-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .confirm-buttons .confirm {
+            background-color: #f44336;
+            color: #fff;
+        }
+
+        .confirm-buttons .cancel {
+            background-color: #ccc;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirm Category Deletion</h1>
+    <div class="confirmation-message">
+        <p>Are you sure you want to delete the category "{{ category.name }}"?</p>
+    </div>
+    <div class="confirm-buttons">
+        <form method="post" action="{% url 'category_delete' category.id %}">
+            {% csrf_token %}
+            <button type="submit" class="confirm">Delete</button>
+        </form>
+        <a href="{% url 'category_list' %}" class="cancel">Cancel</a>
+    </div>
+</body>
+</html>

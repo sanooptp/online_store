@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select User Type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .user-type-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .user-type-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .user-type-buttons .admin-button {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .user-type-buttons .user-button {
+            background-color: #f44336;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select User Type</h1>
+    <div class="user-type-buttons">
+        <a href="{% url 'register' %}" class="admin-button">I'm want to sell</a>
+        <a href="{% url 'register' %}" class="user-button">I want to buy </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Category</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .category-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .category-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .category-form input[type="text"],
+        .category-form textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .category-form button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Category</h1>
+    <form class="category-form" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" value="{{ category.name }}" required>
+        </div>
+        <div>
+            <label for="id_description">Description:</label>
+            <textarea id="id_description" name="description">{{ category.description }}</textarea>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

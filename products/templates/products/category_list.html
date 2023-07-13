@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .category-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-right: 20px;
+            max-width: 300px;
+        }
+
+        .category-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .category-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Category List</h1>
+    <div class="category-list">
+        {% for category in categories %}
+        <div class="category-card">
+            <div class="category-name">{{ category.name }}</div>
+            <div class="category-description">{{ category.description }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
